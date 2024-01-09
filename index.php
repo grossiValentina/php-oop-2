@@ -42,7 +42,7 @@ $prodotti = [
             <?php foreach($prodotti as $prodotto) { ?>
             
                 <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="<?php echo $prodotto->immagine ?>" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-text"> <?php echo $prodotto->nome ?> </h5>
                         <h6 class="card-text"> <?php echo $prodotto->prezzo ?> €</h6>
@@ -54,7 +54,6 @@ $prodotti = [
 
         </div>
     </div>
-
 
 </body>
 
