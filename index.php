@@ -5,17 +5,18 @@ require_once __DIR__ . "/Models/Gioco.php";
 require_once __DIR__ . "/Models/Cucce.php";
 
 
-$primo_prodotto = new Cibo("croccantini", 10, "immagine", "cane", "10-01-2024");
-$secondo_prodotto = new Gioco("osso", 5, "immagine", "cane", "plastica");
+$primo_prodotto = new Cibo("croccantini", 10, "croccantini.jpeg", "cane", "10-01-2024");
+
+$secondo_prodotto = new Gioco("osso", 5, "osso.jpeg", "cane", "plastica");
 $secondo_prodotto->setColorabile("rosso");
 
-$terzo_prodotto = new Cucce("primer", 27, "immagine", "gatto", "S");
+$terzo_prodotto = new Cucce("primer", 27, "cuccia.jpeg", "gatto", "S");
 $terzo_prodotto->setColorabile("giallo");
 
 
-var_dump($primo_prodotto);
-var_dump($secondo_prodotto);
-var_dump($terzo_prodotto);
+//var_dump($primo_prodotto);
+//var_dump($secondo_prodotto);
+//var_dump($terzo_prodotto);
 
 $prodotti = [
     $primo_prodotto,
@@ -46,12 +47,14 @@ $prodotti = [
             <?php foreach($prodotti as $prodotto) { ?>
             
                 <div class="card" style="width: 18rem;">
-                    <img src="<?php echo $prodotto->immagine ?>" class="card-img-top" alt="...">
+                    <img src="img/<?php echo $prodotto->immagine ?>" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-text"> <?php echo $prodotto->nome ?> </h5>
                         <h6 class="card-text"> <?php echo $prodotto->prezzo ?> €</h6>
                         <p class="card-text"> <?php echo $prodotto->categoria ?> </p>
-                      
+                        <?php if ($prodotto instanceof Gioco || $prodotto instanceof Cucce) { ?>
+                        <p><?php echo $prodotto->getColorabile(); ?></p>
+                        <?php } ?> 
                     </div>
                 </div>
             <?php } ?>
