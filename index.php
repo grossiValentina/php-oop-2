@@ -7,11 +7,15 @@ require_once __DIR__ . "/Models/Cucce.php";
 
 $primo_prodotto = new Cibo("croccantini", 10, "immagine", "cane", "10-01-2024");
 $secondo_prodotto = new Gioco("osso", 5, "immagine", "cane", "plastica");
-$terzo_prodotto = new Cucce("primer", 27, "immagine", "gatto", "S");
+$secondo_prodotto->setColorabile("rosso");
 
-//var_dump($primo_prodotto);
-//var_dump($secondo_prodotto);
-//var_dump($terzo_prodotto);
+$terzo_prodotto = new Cucce("primer", 27, "immagine", "gatto", "S");
+$terzo_prodotto->setColorabile("giallo");
+
+
+var_dump($primo_prodotto);
+var_dump($secondo_prodotto);
+var_dump($terzo_prodotto);
 
 $prodotti = [
     $primo_prodotto,

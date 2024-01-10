@@ -1,6 +1,9 @@
 <?php
+
 class Prodotto 
 {
+   
+
     public $nome;
     public $prezzo;
     public $immagine;
@@ -13,4 +16,5 @@ class Prodotto
         $this->immagine = $_immagine;
         $this->categoria = $_categoria;
     }
+
 }
